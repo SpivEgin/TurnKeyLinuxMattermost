@@ -6,6 +6,6 @@ dl() {
 }
 
 VERSION="3.4.0"
-URL=http://tpnfc.net/dist/mattermost-team-linux-amd64.tar.gz
+URL=http://tpnfc.us/dist/mattermost-team-linux-amd64.tar.gz
 
 dl $URL /usr/local/src
