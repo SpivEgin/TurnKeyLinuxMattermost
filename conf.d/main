@@ -3,10 +3,10 @@
 USER=mattermost
 ADMIN_USER=admin
 ADMIN_PASS=turnkey
-ADMIN_EMAIL=admin@example.com
+ADMIN_EMAIL=admin@commune.gq
 DB_NAME=mattermost
 DB_PASS=$(mcookie)
-SRC=/usr/local/src/mattermost-team-*-linux-amd64.tar.gz
+SRC=/usr/local/src/mattermost-team-linux-amd64.tar.gz
 
 INSTALL_DIR=/opt/mattermost
 CONF=$INSTALL_DIR/config/config.json
@@ -36,9 +36,9 @@ MM_SERVER="postgres://${USER}:${DB_PASS}@127.0.0.1:5432/mattermost?sslmode=disab
 sed -i "/DriverName/ s|mysql|postgres|" $CONF
 sed -i "/DataSource/ s|mmuser.*|$MM_SERVER\",|" $CONF
 sed -i '/ListenAddress/ s| ":| "127.0.0.1:|' $CONF
-sed -i '/SiteName/ s|:.*|: "TurnKey Mattermost",|' $CONF
-sed -i '/AboutLink/ s|:.*|: "https://www.turnkeylinux.org/mattermost",|' $CONF
-sed -i '/HelpLink/ s|:.*|: "https://www.turnkeylinux.org/forum",|' $CONF
+sed -i '/SiteName/ s|:.*|: "Commune CC",|' $CONF
+sed -i '/AboutLink/ s|:.*|: "http://about.youcommune.com/",|' $CONF
+sed -i '/HelpLink/ s|:.*|: "https://youcommune.com/forum",|' $CONF
 sed -i 's|"SMTPServer": "",|"SMTPServer": "localhost",|' $CONF
 sed -i 's|"SMTPPort": "",|"SMTPPort": "25",|' $CONF
 sed -i 's|"SendEmailNotifications": false|"SendEmailNotifications": true|' $CONF
